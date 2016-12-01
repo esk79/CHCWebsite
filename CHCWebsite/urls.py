@@ -31,11 +31,9 @@ urlpatterns = [
     # url(r'^sponsorship$', TemplateView.as_view(template_name='sponsorship.html'), name="sponsorship"),
     url(r'^faq/', include('faq.urls')),
     url(r'^tools$', TemplateView.as_view(template_name='tools.html'), name="tools"),
-
 ]
 
 admin.site.site_header = 'Cornell Hacking Club Admin Page'
 
-# if settings.DEBUG:
-    # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
